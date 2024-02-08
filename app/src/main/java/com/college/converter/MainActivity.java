@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.college.converter.databinding.ActivityMainBinding;
+
 /*
     TODOs:
     In groups of 4, complete the following tasks, 1 for each team member:
@@ -33,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         buttonConvert.setOnClickListener( view ->  {
             convertCurrency(view);
+
         } );
     }
 
@@ -43,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
         String inputAmount = inputView.getText().toString();
 
         TextView resultView = findViewById(R.id.resultId);
+        ActivityMainBinding binding;
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
 
         if (!inputAmount.isEmpty()) {
             Float inputAmountDecimal = Float.valueOf(inputAmount);
